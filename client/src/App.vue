@@ -24,7 +24,11 @@ export default {
   color: #2c3e50;
   margin-top: 60px;
 }
-.main{
+body{
   background-image: url('./images/body-bg.gif');
+
+}
+@media (max-width: 768px) {
+  
 }
 </style>

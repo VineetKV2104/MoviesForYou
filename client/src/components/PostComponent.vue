@@ -1,17 +1,15 @@
 <template>
-  <div id="shell" >
+  <div id="shell">
     <div id="header">
       <h1 id="logo"><a href="#">MoviesForYou</a></h1>
 
       <div id="navigation">
-        <ul>
+        <ul class="list-add-movie">
           <li><a class="active" href="#">HOME</a></li>
-          <li><a href="#myBtn">Add Movie</a></li>
+          <li><a href="#myBtn" >Add Movie</a></li>
         </ul>
       </div>
-      <div id="sub-navigation">
-        
-      </div>
+      <div id="sub-navigation"></div>
     </div>
     <div id="main">
       <div id="content">
@@ -107,7 +105,6 @@ export default {
       console.log(data);
       console.log(Object.keys(data).length);
 
-    
       await PostService.insertPosts(data);
 
       this.posts = await PostService.getPosts();
@@ -495,7 +492,7 @@ h1#logo a {
   background-color: #343a40;
   color: #f8f9fa;
 }
-.addMovie{
+.addMovie {
   height: 30px;
   width: 200px;
   margin-top: 20px;
@@ -504,4 +501,58 @@ h1#logo a {
   color: #f8f9fa;
 }
 
+@media (max-width: 768px) {
+  .box {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin: 5em;
+    margin-left: 220px;
+  }
+  .box .movie {
+    padding: 0;
+    margin: 0;
+  }
+  .add-movie {
+    height: 30px;
+    width: 200px;
+    margin-right: 10px;
+    border-radius: 20px;
+    background-color: #343a40;
+    color: #f8f9fa;
+  }
+  #create-post {
+    margin-top: 1em;
+    width: 400px;
+  }
+}
+@media (max-width: 430px) {
+  .box {
+    display: grid;
+    grid-template-columns: 1fr;
+    margin: 5em;
+    margin-left: 220px;
+  }
+  .box .movie {
+    padding: 0;
+    margin: 0;
+  }
+  .add-movie {
+    height: 30px;
+    width: 200px;
+    margin-right: 10px;
+    border-radius: 20px;
+    background-color: #343a40;
+    color: #f8f9fa;
+  }
+  #create-post {
+    margin-top: 1em;
+    width: 400px;
+  }
+  #shell{
+    width: max-content;
+  }
+  #list-add-movie{
+    display: none;
+  }
+}
 </style>
